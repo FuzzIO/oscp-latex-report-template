@@ -23,7 +23,8 @@
 
 \ip\ was scanned with the following switches and relevant output:
 \par \texttt{nmap -iL targets -A -oA basicscan}
-\begin{lstlisting}
+
+\begin{lstlisting}[caption={Nmap scan},label={lst:nmap}]
 ...
 	Nmap scan report for XX.XX.XX.XX
 	Host is up (0.12s latency).
@@ -33,6 +34,7 @@
 	80/tcp open  http    Apache httpd 2.4 ((Ubuntu))
 ...
 \end{lstlisting}
+
 
 
 %-------------------------------REMOTE ACCESS---------------------------------
@@ -51,7 +53,7 @@ Inform users about the importance of strong authentication to security efforts\f
 
 \osid\ searched for attack vectors in \fullhostname's web services by using Gobuster to brute force files and directories on \url{http://XX.XX.XX.XX}.\\
 \texttt{gobuster dir -w /var/lists/dirbuster_medium --url http://XX.XX.XX.XX}
-\begin{lstlisting}
+\begin{lstlisting}[caption={Gobuster output.}, label={lst:gobuster}]
 ===============================================================
 Gobuster v3.0.1
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
@@ -78,7 +80,7 @@ Browsing to \url{http://XX.XX.XX.XX//example_backdoor.php} retrieved a managemen
 
 \begin{figure}[H]
 	\includegraphics [width=.75\textwidth]{./hosts/\hostname/image1.png}
-	\caption{Management interface. Note: Image sourced from \nolinkurl{http://www.apachegui.net/images/Control.png}.}
+	\caption{Management interface. \\ Note: Image sourced from \nolinkurl{http://www.apachegui.net/images/Control.png}.}
 	\label{fig:obviouscreds}
 \end{figure}
 
@@ -90,7 +92,8 @@ After doing stuff, \osid\ exfiltrated evidence of the low-privilege shell.
 
 \begin{figure}[H]
 	\includegraphics [width=.75\textwidth]{./hosts/\hostname/image2.png}
-	\caption{Proof of succesful low-privilege remote access to \fullhostname. Note: Image sourced from \url{https://support.offensive-security.com/oscp-exam-guide/}. Ensure \texttt{type} or \texttt{cat} are used to print the flag and \texttt{ipconfig} or its counterparts to display the machine's address.}
+	\caption{Proof of succesful low-privilege remote access to \fullhostname. \\
+		Note: Image sourced from \url{https://support.offensive-security.com/oscp-exam-guide/}. Ensure \texttt{type} or \texttt{cat} are used to print the flag and \texttt{ipconfig} or its counterparts to display the machine's address.}
 \end{figure}
 
 %-------------------------------PRIVILEGE ESCALATION---------------------------------

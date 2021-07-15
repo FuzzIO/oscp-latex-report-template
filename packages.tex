@@ -36,6 +36,8 @@
 %Csv -> Latex
 \usepackage{csvsimple}
 
+
+
 %Für Graphiken 
 \usepackage{tikz}
 \usetikzlibrary{plotmarks}
@@ -52,7 +54,8 @@
 %\onehalfspacing
 \usepackage{multirow}
 %Paket gibt mehr Kontrolle über die Captions (Bildunterschriften) bei Abbildungen
-\usepackage[labelfont=bf,format=hang,font=footnotesize,justification=raggedright,singlelinecheck=false]{caption}
+\usepackage[labelfont=bf,format=hang,font=footnotesize,justification=centering,singlelinecheck=false]{caption}
+\usepackage{subcaption}
 
 %Helvetia (Arial) Verwenden WICHTIG: Beide folgenden Zeilen kopieren!
 %\usepackage[scaled]{helvet} %
@@ -88,6 +91,8 @@
   extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
 % frame=single,	                   % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  captionpos=bc,
+  breaklines=true,
 % keywordstyle=\color{blue},       % keyword style
 % language=Octave,                 % the language of the code
 % otherkeywords={*,...},           % if you want to add more keywords to the set
@@ -129,3 +134,8 @@
 
 \renewcommand{\footrulewidth}{0.1pt} % Create a rule above the page number
 \fancyfoot[R]{\textcolor{color1}\thepage  \textcolor{color2}{/\pageref{LastPage}}}
+
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\setlength{\@fptop}{5pt}
+\makeatother
