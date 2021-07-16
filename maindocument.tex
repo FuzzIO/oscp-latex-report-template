@@ -52,27 +52,30 @@ No part of this publication, in whole or in part, may be reproduced, copied, tra
 \newcommand{\productx}{}
 \newcommand{\client}{\textit{kali (ZZ.ZZ.ZZ.ZZ)}}
 
-\section{Overview}
-\subsection{Introduction}
-This penetration test report contains all the steps taken to successfully compromise machines in the Offensive Security Certified Professional (OSCP) exam environment; data such as proof of concepts (PoC), custom exploit code, and step-by-step documentation are included. The purpose of this report is to convey the student's understanding of penetration testing methodologies as well as the technical knowledge required to successfully achieve the Offensive Security Certified Professional (OSCP) certification.
-
-\textit{Note: This document serves as a template for the real report; it provides organized presentation so you can focus on pwning boxes. Please read the \href{https://support.offensive-security.com/oscp-exam-guide/}{OSCP Exam Guide} for the composition of your report. Good luck and try harder!}
-
-\subsection{High-Level Summary}
+\section{Executive Summary}
 \osid\ was tasked with performing an internal penetration test of the OSCP exam network. An internal penetration test is a simulated attack against internally connected systems. The focus of this test is to perform attacks, similar to those of a malicious entity, and attempt to infiltrate Offensive Security’s internal exam systems.
 
 \osid's overall objective was to find and exploit vulnerabilities while reporting the findings back to Offensive Security. While conducting the internal penetration test, there were several alarming vulnerabilities that were identified within the exam network. 
 
 \par \osid\ was able to gain administrative access to several machines due to vulnerable applications and poor security configurations. The potential for this access can be mitigated by doing stuff.
 
-\subsection{Technical Summary}
-\osid\ was tasked with penetration testing the following systems on the OSCP exam network:
+\section{Overview}
+\section{Introduction}
+This penetration test report contains all the steps taken to successfully compromise machines in the Offensive Security Certified Professional (OSCP) exam environment; data such as proof of concepts (PoC), custom exploit code, and step-by-step documentation are included. The purpose of this report is to convey the student's understanding of penetration testing methodologies as well as the technical knowledge required to successfully achieve the Offensive Security Certified Professional (OSCP) certification.
 
+\textit{Note: This document serves as a template for the real report; it provides organized presentation so you can focus on pwning boxes. Please read the \href{https://support.offensive-security.com/oscp-exam-guide/}{OSCP Exam Guide} for the composition of your report. Good luck and try harder!}
+
+\section{Results}
+\subsection{Scope}
+The scope of the penetration test was the OSCP exam network. Below is the list of hosts targeted by \osid.
 \begin{itemize}
-    \item XX.XX.XX.XX
+	\item XX.XX.XX.XX
 \end{itemize}
 
-Using the \client\ machine, \osid\ gained administrative access to several machines by exploiting their vulnerabilities. These machines and their vulnerabilities are listed below and further documented in later sections.
+
+\subsection{Summary of Findings}
+
+Using the \client{} machine, \osid{} gained administrative access to several machines by exploiting their vulnerabilities. These machines and their vulnerabilities are listed below and further documented in section~\ref{sec:hosts}. Table~\ref{tab:summary_vuln} summarizes the findings.
 
 %Define vulnerabilities below for referencing throughout the report
 %-----------------Vulnerabilities-------------------%
@@ -95,16 +98,13 @@ Using the \client\ machine, \osid\ gained administrative access to several machi
     \vulnCow \\
     \hline
 \end{tabularx}
-\label{tab:dirtycow_weakpass}
+\label{tab:summary_vuln}
 \caption{Dirty Cow.}
 \end{table}
 
-%\end{center}
+%\end{center} 
+\input{./findings.tex}
 
-
-%----------BOX_RUNDOWNS---------%
-\input{./hosts/example/host.tex}
-%-------------------------------%
 
 \appendix
 \input{./appendix/appendix.tex}
