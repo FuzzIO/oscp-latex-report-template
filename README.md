@@ -17,6 +17,6 @@ Check out ./maindocument.pdf to see what this template looks like.
 
 ## Guide
 
-`TODO:`: This section will be fleshed out as I tweak the template.
+`TODO:` This section will be fleshed out as I tweak the template.
 
 To create sections about more boxes, duplicate ./hosts/example, change name variables accordingly, and input the folder's host.tex file in *maindocument.tex* in the 'BOX_RUNDOWNS' section.
